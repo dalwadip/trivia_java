@@ -23,12 +23,13 @@ public class triviaMain {
 		
 		Scanner s = new Scanner(System.in);
 		
-		Collections.shuffle(questions); // put outside b/c 
+		Collections.shuffle(questions); // put outside b/c runs shuffle before printing
 		while (is_running) {
 			for(int i = 0; i < questions.size(); i++) { //array: length, string: length(), list: size()
 				System.out.println(questions.get(i).question); //use [] for array, use .get() for list, put .options after i
-//				Collections.shuffle(questions);
+//				Collections.shuffle(questions); //shuffles the questions not the options, ruins matching
 				
+				Collections.shuffle(questions.get(i).options); //works only if it's a list, not an array
 				for(String option : questions.get(i).options) { //used to get the options in an arraylist
 					System.out.println(option);
 					
