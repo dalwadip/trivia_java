@@ -1,6 +1,5 @@
 package trivia;
 
-import java.awt.print.Printable;
 import java.util.Scanner;
 
 public class triviaMain {
@@ -13,7 +12,7 @@ public class triviaMain {
 		// array of options
 		String[][] options = {{"1. 5", "2. 6", "3. 7"}, 
 							 {"1. mars", "2. jupiter", "3. saturn"}, 
-							 {"1. leonardo da vinvi", "2. pablo picasso", "3. frida kahlo"}};
+							 {"1. leonardo da vinci", "2. pablo picasso", "3. frida kahlo"}};
 		
 		// int array of answers
 		int[] answers = {3, 2, 1};
@@ -30,8 +29,17 @@ public class triviaMain {
 				System.out.println(option);
 			}
 			System.out.println();
+			
+			System.out.print("Enter the number: ");
+			guess = s.nextInt();
+			if(guess == answers[i]) {
+				System.out.println("Correct!");
+				score++;
+			}
+			else {
+				System.out.println("Wrong! The answer is " + answers[i] + "!");
+			}
 		}
-		
+		s.close();
 	}
-
 }
